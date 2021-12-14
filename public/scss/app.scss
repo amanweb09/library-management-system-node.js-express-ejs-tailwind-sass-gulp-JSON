@@ -37,7 +37,9 @@ div.side-menu {
             cursor: pointer;
 
                 i {
-                    font-size: 1.15rem;
+                    font-size: 1.25rem;
+                    // color: rgb(99, 37, 161);
+
                 }
         }
     }
@@ -103,9 +105,6 @@ div.main-menu {
                 cursor: pointer;
                 font-weight: 400;
             }
-            // >div:nth-child(1) {
-            //     background-color: rgba(194, 10, 240, 0.35);
-            // }
         }
         div.big-task-option {
             width: 85%;
@@ -213,6 +212,14 @@ div.main-menu {
                     :nth-child(4) {
                         flex: 1;
                     }
+                }
+            }
+            div.no-book {
+                width: 100%;
+                
+                p {
+                    text-align: center;
+                    font-weight: 500;
                 }
             }
 

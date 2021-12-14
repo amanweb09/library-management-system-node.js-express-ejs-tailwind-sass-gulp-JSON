@@ -25,9 +25,19 @@ getBookBtn.addEventListener('click', (e) => {
                     let markup = generateMarkup(doc);
                     const markupContainer = document.getElementById('details-container-main');
                     markupContainer.innerHTML = markup;
-
-                    // markupContainer.appendChild(markup);
                 })
+            }
+            else if (res.data.failureMessage) {
+                function generateFailureMarkup() {
+                    return `
+                    <div class="no-book" id="det-screen">
+                        <p>No Book Found with this ID</p>
+                    </div>
+                `
+                }
+                let markup = generateFailureMarkup();
+                const markupContainer = document.getElementById('no-book');
+                markupContainer.innerHTML = markup;
             }
         })
         .catch((err) => {

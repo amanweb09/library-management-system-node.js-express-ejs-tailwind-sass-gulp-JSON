@@ -13,7 +13,7 @@ const fetchBookController = () => {
                 res.json({ book: getBook });
             }
             else {
-                res.json({ FailureMessage: "No book found!" });
+                res.json({ failureMessage: "No book found!" });
             }
         }
     }

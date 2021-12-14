@@ -10,5 +10,11 @@
         "title": "jetha ki kahaniyan",
         "author": "Jethalal gada",
         "stock": 5
+    },
+    {
+        "id": "3",
+        "title": "Atomic Habits",
+        "author": "James Clear",
+        "stock": 5
     }
 ]
