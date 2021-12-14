@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,59 @@
     <title>MyLib - A Library Management System</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/app.css">
+    <script src="https://kit.fontawesome.com/1a53f3ddfb.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <div class="w-full h-screen flex container">
         <div class="side-menu w-1/4 bg-white h-screen">
             <h2 class="text-lg title">MyLib</h2>
+
+            <div class="icon-wrapper">
+                <div class="icons"><i class="fas fa-home"></i></div>
+                <div class="icons"><i class="fas fa-book"></i></div>
+                <div class="icons"><i class="fas fa-users"></i></div>
+                <div class="icons"><i class="fas fa-id-card-alt"></i></div>
+            </div>
+            <div class="user-info">
+                <img src="https://m.media-amazon.com/images/I/81LAhlSiY9L._UL1500_.jpg" alt="">
+            </div>
+            <h3 class="user-name">Mr. Spiderman</h3>
         </div>
-        <div></div>
+
+        <div class="main-menu flex">
+            <div class="tasks flex">
+                <div class="title">
+                    <h2>Welcome to</h2>
+                    <h2>MyLib</h2>
+                    <p>Your Customized Library Management System</p>
+                </div>
+
+                <div class="task-options flex">
+                    <div class="task-options-items flex-center">Find a Book</div>
+                    <div class="task-options-items flex-center">Add New Book</div>
+                    <div class="task-options-items flex-center">Issue a Book</div>
+                    <div class="task-options-items flex-center">Delete a Book</div>
+                </div>
+
+                <div class="big-task-option"></div>
+            </div>
+            <div class="book-info flex">
+                <h1>Find a Book</h1>
+                <form action="#" method="get">
+                    <label for="id">Book ID/Title</label>
+                    <input type="text" name="idOrTitle" placeholder="Enter Book ID ot Title">
+
+                    <button type="submit">find Book</button>
+                </form>
+
+                <div class="response-screen">
+
+                </div>
+            </div>
+
+        </div>
     </div>
 </body>
+
 </html>
