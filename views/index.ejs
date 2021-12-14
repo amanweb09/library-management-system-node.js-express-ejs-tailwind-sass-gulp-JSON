@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/app.css">
     <script src="https://kit.fontawesome.com/1a53f3ddfb.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+        integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -47,20 +50,31 @@
             </div>
             <div class="book-info flex">
                 <h1>Find a Book</h1>
-                <form action="#" method="get">
-                    <label for="id">Book ID/Title</label>
-                    <input type="text" name="idOrTitle" placeholder="Enter Book ID ot Title">
+                <form action="/get-book" method="POST">
+                    <label for="id">Book ID</label>
+                    <input id="bookID" type="text" name="id" placeholder="Enter Book ID">
 
-                    <button type="submit">find Book</button>
+                    <button type="submit" id="getBookBtn">Find Book</button>
                 </form>
 
-                <div class="response-screen">
+                <div class="response-screen" id="res-screen">
+                    <h3>Book Details</h3>
+                    <div class="details flex">
+                        <div class="detail-head">ID</div>
+                        <div class="detail-head">Title</div>
+                        <div class="detail-head">Author</div>
+                        <div class="detail-head">Stock</div>
+                    </div>
 
+                    <div class="details-container-main" id="details-container-main"></div>
+                    
                 </div>
             </div>
 
         </div>
     </div>
+
+    <script src="/js/index.js"></script>
 </body>
 
 </html>

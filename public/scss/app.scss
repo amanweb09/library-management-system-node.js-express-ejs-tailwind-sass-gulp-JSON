@@ -170,6 +170,52 @@ div.main-menu {
             border: 1px solid rgba(194, 10, 240, 0.26);
             margin: 1rem 0;
             border-radius: 10px;
+            >h3 {
+                text-align: center;
+                font-weight: 800;
+                margin: 1rem 0;
+            }
+            .details {
+                width: 98%;
+                justify-content: space-between;
+                text-align: center;
+                font-weight: 600;
+
+                :nth-child(1) {
+                    flex: 1;
+                }
+                :nth-child(2) {
+                    flex: 5;
+                }
+                :nth-child(3) {
+                    flex: 3;
+                }
+                :nth-child(4) {
+                    flex: 1;
+                }
+            }
+            div.details-container-main {
+                .details-container {
+                    width: 98%;
+                    justify-content: space-between;
+                    text-align: center;
+                    padding: 0.5rem 0;
+    
+                    :nth-child(1) {
+                        flex: 1;
+                    }
+                    :nth-child(2) {
+                        flex: 5;
+                    }
+                    :nth-child(3) {
+                        flex: 3;
+                    }
+                    :nth-child(4) {
+                        flex: 1;
+                    }
+                }
+            }
+
         }
     }
 }

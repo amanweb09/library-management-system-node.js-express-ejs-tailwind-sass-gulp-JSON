@@ -1,0 +1,14 @@
+[
+    {
+        "id": "1",
+        "title": "champak",
+        "author": "champak lal gada",
+        "stock": 4
+    },
+    {
+        "id": "2",
+        "title": "jetha ki kahaniyan",
+        "author": "Jethalal gada",
+        "stock": 5
+    }
+]
