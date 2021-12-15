@@ -81,6 +81,9 @@ submitCreateBookBtn.addEventListener('click', (e) => {
         if (res.status === 201) {
             showNoty(res.data.successMessage, 'success')
         }
+        if (res.data.failureMessage) {
+            showNoty(res.data.failureMessage, 'error')
+        }
     })
     .catch((err) => {
         console.log(err);

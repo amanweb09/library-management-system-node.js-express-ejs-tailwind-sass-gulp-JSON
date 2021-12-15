@@ -10,20 +10,30 @@ const createBookController = () => {
 
 
             if (!id || !title || !author || !stock) {
-                return  res.json({failureMessage: "Please fill all the fields!"})
+                return res.json({ failureMessage: "Please fill all the fields!" })
             }
             else {
-                const newBook = {
-                    id, title, author, stock
-                }
-                books.push(newBook);
-    
-                const books_path = path.join(__dirname, '../books.json')
-                fs.writeFileSync(books_path, JSON.stringify(books), (err) => {
-                    console.log(err);
+                const bookID = books.filter((book) => {
+                    return book.id === id
                 })
 
-                return res.status(201).json({successMessage: "Book Added Successfully!"})
+                if (bookID.length) {
+                    return res.json({ failureMessage: "Book Already exists with this ID" })
+                }
+                else {
+                    const newBook = {
+                        id, title, author, stock
+                    }
+                    books.push(newBook);
+
+                    const books_path = path.join(__dirname, '../books.json')
+                    fs.writeFileSync(books_path, JSON.stringify(books), (err) => {
+                        console.log(err);
+                    })
+
+                    return res.status(201).json({ successMessage: "Book Added Successfully!" })
+                }
+
             }
 
         }
