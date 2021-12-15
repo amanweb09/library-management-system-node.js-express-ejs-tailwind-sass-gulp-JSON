@@ -44,3 +44,46 @@ getBookBtn.addEventListener('click', (e) => {
             console.log(err);
         })
 })
+
+const createNewBookBtn = document.querySelector('div#add-new-book-btn');
+const cancelCreateBookBtn = document.querySelector('div.action-btn button#cancel-btn');
+const submitCreateBookBtn = document.querySelector('div.action-btn button#submit-btn');
+
+createNewBookBtn.addEventListener('click', (e) => {
+    const createBookContainer = document.querySelector('div.create-book-wrapper');
+    
+    createBookContainer.classList.toggle('open')
+})
+
+console.log(cancelCreateBookBtn);
+cancelCreateBookBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const createBookContainer = document.querySelector('div.create-book-wrapper');
+    createBookContainer.classList.remove('open');
+})
+
+submitCreateBookBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    let formdata = document.querySelectorAll('form#create-book-form input');
+
+    let formObj = {
+        id: formdata[0].value,
+        title: formdata[1].value,
+        author: formdata[2].value,
+        stock: formdata[3].value,
+    }
+    
+    axios.post('create-book', formObj)
+    .then((res) => {
+        console.log(res);
+        if (res.status === 201) {
+            showNoty(res.data.successMessage, 'success')
+        }
+    })
+    .catch((err) => {
+        console.log(err);
+        showNoty("Something went wrong", 'error')
+    })
+})

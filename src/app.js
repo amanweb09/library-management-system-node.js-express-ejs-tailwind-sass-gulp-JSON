@@ -18,6 +18,7 @@ app.set('views', views_path);
 app.use(express.static(static_path));
 
 const fetchBookController = require('./controllers/fetchBookController');
+const createBookController = require('./controllers/createBookController');
 
 app.get('/', (req, res) => {
     res.render('index', {
@@ -26,7 +27,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/get-book', fetchBookController().fetchBook);
-
+app.post('/create-book', createBookController().create);
 
 app.listen(port, () => {
     console.log(`listening on port ${port}!`)

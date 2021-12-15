@@ -12,6 +12,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
         integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css"
+        integrity="sha512-0p3K0H3S6Q4bEWZ/WmC94Tgit2ular2/n0ESdfEX8l172YyQj8re1Wu9s/HT9T/T2osUw5Gx/6pAZNk3UKbESw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -41,7 +44,7 @@
 
                 <div class="task-options flex">
                     <div class="task-options-items flex-center">Find a Book</div>
-                    <div class="task-options-items flex-center">Add New Book</div>
+                    <div id="add-new-book-btn" class="task-options-items flex-center">Add New Book</div>
                     <div class="task-options-items flex-center">Issue a Book</div>
                     <div class="task-options-items flex-center">Delete a Book</div>
                 </div>
@@ -68,14 +71,47 @@
 
                     <div class="details-container-main" id="details-container-main"></div>
                     <div class="no-book" id="no-book"></div>
-                    
                 </div>
             </div>
+        </div>
 
+        <div class="create-book-wrapper">
+            <h2>Add a Book</h2>
+            <form action="/create-book" method="POST" id="create-book-form">
+                <label for="id">Book ID</label>
+                <input type="text" name="id" id="id" placeholder="Enter Book ID">
+
+                <label for="id">Book Title</label>
+                <input type="text" name="title" id="title" placeholder="Enter Book Title">
+
+                <label for="id">Author</label>
+                <input type="text" name="author" id="author" placeholder="Enter Book Author">
+
+                <label for="id">Stock</label>
+                <input type="number" name="stock" id="stock" placeholder="Book Stock Available">
+
+                <div class="action-btn flex-center">
+                    <button id="submit-btn" type="submit">Submit</button>
+                    <button id="cancel-btn">Cancel</button>
+                </div>
+            </form>
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"
+        integrity="sha512-lOrm9FgT1LKOJRUXF3tp6QaMorJftUjowOWiDcG5GFZ/q7ukof19V0HKx/GWzXCdt9zYju3/KhBNdCLzK8b90Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/js/index.js"></script>
+    <script>
+        function showNoty(text, type) {
+            new Noty({
+                text: text,
+                timeout: 1500,
+                theme: 'sunset',
+                type: type
+            }).show();
+        }
+    </script>
 </body>
 
 </html>
